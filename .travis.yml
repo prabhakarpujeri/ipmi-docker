@@ -5,3 +5,5 @@ services:
 
 before_install:
   - docker build -t prabhakarpujeri/ipmitool-docker .
+script:
+  - bundle run --privileged -v /dev/ipmi0:/dev/ipmi0 -ti  prabhakarpujeri/ipmitool-docker
